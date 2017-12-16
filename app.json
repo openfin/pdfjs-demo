@@ -1,0 +1,24 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "name": "OpenFinPDFDemo",
+        "description": "Demo of using PDFJS to support inline PDF viewing in OpenFin",
+        "url": "http://localhost:7070",
+        "uuid": "OpenFin-PDFJS",
+        "autoShow": true,
+        "defaultCentered": true,
+        "frame": true,
+        "defaultHeight": 600,
+        "defaultWidth": 800
+    },
+    "runtime": {
+        "arguments": "",
+        "version": "stable"
+    },
+    "shortcut": {
+        "company": "OpenFin",
+        "description": "Openfin Webinar",
+        "name": "Openfin Webinar",
+        "icon": "http://localhost:7070/img/openfin.ico"
+    }
+}

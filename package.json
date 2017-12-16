@@ -1,0 +1,22 @@
+{
+    "name": "OpenFinPDFJSDemo",
+    "version": "0.0.1",
+    "description": "Demo of using PDFJS to support inline PDF viewing in OpenFin",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/openfin/pdfjs-demo"
+    },
+    "author": "Nicholas Kolba",
+    "license": "Apache2.0",
+    "bugs": {
+        "url": "https://github.com/openfin/pdfjs-demo/issues"
+    },
+    "homepage": "https://github.com/openfin/pdfjs-demo",
+    "scripts": {
+       "start": "http-server -c-1 -p 7070"
+     },
+     "devDependencies": {
+       "http-server": "0.8.5",
+       "openfin-cli": "1.1.5"
+     }
+}

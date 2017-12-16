@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>OpenFin: PDF.JS Demo</title>
+    </head>
+    <body>
+        <ul>
+            <li><a href="#" class="pdfLink" data-target="http://localhost:7070/web/viewer.html">Default Viewer</li>
+            <li><a href="#" class="pdfLink" data-target="http://localhost:7070/web/viewer.html?file=http://localhost:7070/Test_PDF.pdf">Load PDF from Querystring</li>
+            <li><a href="#" class="pdfLink" data-target="viewframe">Load in iFrame</a></li>
+            </ul>
+        <iframe id="viewerframe" width="600" height="400"></iframe>
+    </body>
+    <script>
+        var win;
+
+        function createWindow(success){
+            win = new fin.desktop.Window({
+                        name:"viewWindow",
+                        url:"blank.html",
+                        defaultWidth:800,
+                        defaultHeight:600,
+                        opacity:1,
+                        autoShow:false,
+                        saveWindowState:false
+                    }, success);
+        }
+
+        function loadWindow(target){
+            win.navigate(target,function(){
+            win.isShowing(iShow => {
+           
+                win.bringToFront(function(){                   
+                });
+            
+            });
+          
+        });
+        }
+       
+        window.addEventListener("DOMContentLoaded",ev => {
+
+            let links = document.querySelectorAll(".pdfLink");
+            links.forEach(link => {
+                link.addEventListener("click", evt => {
+                    let t = evt.target.getAttribute("data-target");
+                    if (t === "viewframe"){
+                        document.getElementById('viewerframe').src='web/viewer.html';
+                    }
+                    else {
+                        
+                        if (!win || ! win.nativeWindow){
+                            createWindow(function(){win.show(function(){loadWindow(t);})});
+                        }
+                        else {
+                            loadWindow(t);
+                        }   
+                    }
+                    
+                });
+            });
+        });
+    </script>
+</html>
